@@ -12,7 +12,6 @@ export default {
     this.page = parseInt(this.$route.query.page)||1
     blog.getIndexBlogs({page:this.page}).then(res => {
       let array = res.data
-      console.log(res.data)
       for(let i = 0; i<array.length; i++){
         if(array[i].user==null){
           array.splice(i--,1)
